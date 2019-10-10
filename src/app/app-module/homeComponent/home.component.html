@@ -1,0 +1,4 @@
+<input class="default" [ngClass]="{'center': user.firstName === 'Jaya'}" type="text" v-restrict-input="[a-zA-Z\s]$" [(ngModel)]="user.firstName" placeholder="Enter first name"/><br/>
+<input type="text" v-restrict-input="[a-zA-Z\s]$" [(ngModel)]="user.lastName" placeholder="Enter last name" /><br/>
+
+<button (click)="updateDetails()">Update details</button>
