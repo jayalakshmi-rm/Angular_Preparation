@@ -1,4 +1,4 @@
 <p>dash-board-component works!</p>
-<input type="text" v-restrict-input="[a-zA-Z\s]$" [(ngModel)]="clientName" />
+<input type="text" v-restrict-input="[a-zA-Z\s]$" [ngModel]="clientName" (ngModelChange)="modelChangeHandler($event)"/>
 <app-dashboard-child [name]="clientName" (notify)="result = $event"></app-dashboard-child>
 Is button clicked {{result}}

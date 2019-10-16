@@ -2,3 +2,13 @@
 <input type="text" v-restrict-input="[a-zA-Z\s]$" [(ngModel)]="user.lastName" placeholder="Enter last name" /><br/>
 
 <button (click)="updateDetails()">Update details</button>
+
+<div>
+    <button (click)="callObservable()">Obsevables</button>
+    <textarea #observable cols="30" rows="10"></textarea>
+</div>
+
+<div>
+    <button (click)="callPromise()">Promise</button>
+    <textarea #promise cols="30" rows="10"></textarea>
+</div>

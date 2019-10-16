@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedEventBusService } from '../../shared-module/services/shared-event-bus.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   public footerVar1 = 'Footer var 1';
+  userName: string;
 
-  constructor() { }
+  constructor(private sharedBus: SharedEventBusService) {
+    this.sharedBus.userDataEvent.subscribe(
+      (data) => {
+        this.userName = data;
+      }
+    );
+  }
 
   ngOnInit() {
   }
